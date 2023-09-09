@@ -4,19 +4,19 @@ if __name__ == "__main__":
     import sys
     n = len(sys.argv)
     if n != 4:
-        sys.stderr.write("Usage: ./100-my_calculator.py <a> <operator> <b>\n")
+        sys.stderr.write("Usage: ./100-my_calculator.py <a> <operator> <b>")
         sys.exit(1)
     a = int(sys.argv[1])
     operator = sys.argv[2]
     b = int(sys.argv[3])
     if operator == '+':
-        print("{:d} {:s} {:d} = {:d}".format(a, operator, b, add(a, b)))
+        print("{} {} {} = {}".format(a, operator, b, add(a, b)))
     elif operator == '-':
-        print("{:d} {:s} {:d} = {:d}".format(a, operator, b, sub(a, b)))
+        print("{} {} {} = {}".format(a, operator, b, sub(a, b)))
     elif operator == '*':
-        print("{:d} {:s} {:d} = {:d}".format(a, operator, b, mul(a, b)))
+        print("{} {} {} = {}".format(a, operator, b, mul(a, b)))
     elif operator == '/':
-        print("{:d} {:s} {:d} = {:d}".format(a, operator, b, div(a, b)))
+        print("{} {} {} = {}".format(a, operator, b, div(a, b)))
     else:
         print("Unknown operator. Available operators: +, -, * and /")
         sys.exit(1)
