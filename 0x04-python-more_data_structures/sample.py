@@ -6,4 +6,6 @@ matrix = [
 ]
 row = len(matrix)
 col = len(matrix[0])
+list1 = [0 for _ in range(5)]
+print(list1)
 print(row, col)
