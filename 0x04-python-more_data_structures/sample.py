@@ -1,11 +1,5 @@
 #!/usr/bin/python3
-matrix = [
-    [1, 2, 3, 3],
-    [4, 5, 6, 7],
-    [7, 8, 9, 0]
-]
-row = len(matrix)
-col = len(matrix[0])
-list1 = [0 for _ in range(5)]
-print(list1)
-print(row, col)
+
+d = {1: 'Hello', 2: 'Tony'}
+for key, value in d.items():
+    print("{}: {}".format(key, value))
