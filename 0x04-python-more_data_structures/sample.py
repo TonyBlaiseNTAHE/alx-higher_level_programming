@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 
-d = {1: 'Hello', 2: 'Tony'}
-for  value in d:
-    value *=2
-    print("{}".format(value))
+d = {'Mike': 40, 'John': 25, 'Jimmy': 30, 'Tony': 30}
+max_v = 0 
+for  key, value  in d.items():
+    if value > max_v:
+        max_v = value
+print("Best score: {}".format(max_v))
