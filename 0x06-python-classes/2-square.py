@@ -7,7 +7,7 @@ class Square:
     """Defining __init__ function"""
     def __init__(self, size=0):
         """check if size is an integer, if yes and instantiate it"""
-        if not isinstance(size, int):
+        if type(size) != int:
             """ raise an TypeError message """
             raise TypeError("size must be an intger")
         elif size < 0:
