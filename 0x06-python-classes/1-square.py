@@ -9,6 +9,6 @@ class Square:
     Args:
         value (int, optional): The side length of the square. Defaults to 0.
     """
-    def __init__(self, size):
+    def __init__(self, size=0):
         """ initializes __size of self with size """
         self.__size = size
