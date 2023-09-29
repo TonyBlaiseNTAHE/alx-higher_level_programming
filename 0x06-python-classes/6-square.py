@@ -32,9 +32,15 @@ class Square:
 
     @position.setter
     def position(self, value):
-        """Set the position with validation"""
-        if not isinstance(value, tuple) or len(value) != 2 \
-                or not all(isinstance(elem, int) and elem > 0 for elem in value):
+        """setter of __position
+        Args:
+            value (tuple): position of the square in 2D space
+        Returns:
+            None
+        """
+        if type(value) is not tuple or len(value) != 2 or \
+           type(value[0]) is not int or value[0] < 0 or \
+           type(value[1]) is not int or value[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.__position = value
@@ -44,11 +50,15 @@ class Square:
         return self.__size ** 2
 
     def my_print(self):
-        """Print the square with position"""
+        """prints the square
+        Returns:
+            None
+        """
         if self.__size == 0:
-            print("")
-        else:
-            for _ in range(self.__position[1]):
-                print()
-            for _ in range(self.__size):
-                print(" " * self.__position[0] + "#" * self.__size)
+            print()
+            return
+        for i in range(self.__position[1]):
+            print()
+        for j in range(self.__size):
+            print("".join([" " for k in range(self.__position[0])]), end="")
+            print("".join(["#" for z in range(self.__size)]))
