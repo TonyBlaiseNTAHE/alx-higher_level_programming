@@ -1,66 +1,40 @@
 #!/usr/bin/python3
+"""Define classes for a singly-linked list."""
+
 
 class Node:
-    """
-    Represents a Node in a singly linked list.
+    """Represent a node in a singly-linked list."""
 
-    Attributes:
-    - data (int): The data stored in the Node.
-    - next_node (Node): The reference to the next Node in the linked list.
-    """
     def __init__(self, data, next_node=None):
-        """
-        Initializes a Node with the given data and next_node.
-
+        """Initialize a new Node.
         Args:
-            data (int): The data to be stored in the Node.
-            next_node (Node, optional): Reference to the next
-            Node. Defaults to None.
+            data (int): The data of the new Node.
+            next_node (Node): The next node of the new Node.
         """
-        self.__data = data
-        self.__next_node = next_node
+        self.data = data
+        self.next_node = next_node
 
     @property
     def data(self):
-        """int: Returns the data stored in the Node."""
-        return self.__data
+        """Get/set the data of the Node."""
+        return (self.__data)
 
     @data.setter
     def data(self, value):
-        """
-        Sets the data of the Node.
-
-        Args:
-            value (int): The new data value for the Node.
-
-        Raises:
-            TypeError: If the value is not an integer.
-        """
         if not isinstance(value, int):
             raise TypeError("data must be an integer")
-        else:
-            self.__data = value
+        self.__data = value
 
     @property
     def next_node(self):
-        """Node: Returns the reference to the next Node."""
-        return self.__next_node
+        """Get/set the next_node of the Node."""
+        return (self.__next_node)
 
     @next_node.setter
     def next_node(self, value):
-        """
-        Sets the next_node of the Node.
-
-        Args:
-            value (Node): The new next_node for the Node.
-
-        Raises:
-            TypeError: If the value is not a Node object or None.
-        """
-        if value is not None and not isinstance(value, Node):
-            raise TypeError("next_node must be a Node object or None")
-        else:
-            self.__next_node = value
+        if not isinstance(value, Node) and value is not None:
+            raise TypeError("next_node must be a Node object")
+        self.__next_node = value
 
 
 class SinglyLinkedList:
