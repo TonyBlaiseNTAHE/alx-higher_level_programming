@@ -5,9 +5,11 @@ defines a class
 
 
 class Rectangle:
+    """Rectangle"""
+
     number_of_instances = 0
     print_symbol = "#"
-    """defining __init__ function"""
+
     def __init__(self, width=0, height=0):
         """initializing retangle attributes"""
         self.width = width
