@@ -9,7 +9,7 @@ class Rectangle:
 
     number_of_instances = 0
     print_symbol = "#"
-
+    """defining __init__ function"""
     def __init__(self, width=0, height=0):
         """initializing retangle attributes"""
         self.width = width
@@ -73,6 +73,19 @@ class Rectangle:
         """print a message if the instance is deleted"""
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
+
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        """if statement"""
+        if not isinstance(rect_1, Rectangle):
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        elif not isinstance(rect_2, Rectangle):
+            raise TypeError("rect_2 must be an instance of Rectangle")
+        else:
+            if rect_1.area() >= rect_2.area():
+                return rect_1
+            else:
+                return rect_2
 
     @classmethod
     def square(cls, size=0):
