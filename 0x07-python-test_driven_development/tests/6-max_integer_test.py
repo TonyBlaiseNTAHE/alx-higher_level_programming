@@ -23,3 +23,12 @@ class TestMaxInteger(unittest.TestCase):
         self.assertRaises(TypeError, max_integer, 0, '+', 45, 6, 7 ,8)
         self.assertRaises(TypeError, max_integer, 1, 2, 'i')
         self.assertRaises(TypeError, max_integer, 0, '+', 7 ,8)
+    def test_syntax(self):
+        with self.assertRaises(SyntaxError):
+            eval("max_integer([1,,0])")
+            eval("max_integer([hello, 07])")
+    def test_name(self):
+        with self.assertRaises(NameError):
+            eval("max_integer([hello])")
+            eval("max_integer([hello, hi])")
+            eval("max_integer([a, z])")
