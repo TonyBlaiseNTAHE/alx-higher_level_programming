@@ -91,6 +91,56 @@ class TestMaxInteger(unittest.TestCase):
     def test_characters_list(self):
         """Test for list of characters"""
         self.assertEqual(max_integer(['a', 'c', 'd', 'v']), 'v')
+    """
+    Test class that defines test cases for the max_integer function.
+    """
+    def test_positive_integers(self):
+        """Test for positive integers"""
+        self.assertEqual(max_integer([1, 2, 3, 4]), 4)
+        self.assertEqual(max_integer([4, 1, 2, 3]), 4)
+        self.assertEqual(max_integer([1, 2, 4, 2, 3]), 4)
+
+    def test_negative_integers(self):
+        """Test for negative integers"""
+        self.assertEqual(max_integer([-10, -20, -30, -40]), -10)
+        self.assertEqual(max_integer([-2, -91, -31, -4]), -2)
+        self.assertEqual(max_integer([0, -91, -31, -4]), 0)
+        self.assertEqual(max_integer([-123, -91, -31, -4]), -4)
+
+    def test_pos_neg_integers(self):
+        """Test for positive and negative integers"""
+        self.assertEqual(max_integer([-9, -14, 23, 98, -9, -100, -1, 0]), 98)
+
+    def test_empty_list(self):
+        """Test for an empty list"""
+        self.assertIsNone(max_integer([]), None)
+
+    def test_one_arg(self):
+        """Test for passing one number to list"""
+        self.assertEqual(max_integer([1]), 1)
+
+    def test_none_argument(self):
+        """Test for passing None"""
+        with self.assertRaises(TypeError):
+            max_integer(None)
+
+    def test_list_with_none(self):
+        """Test for list with None as one of its elements"""
+        with self.assertRaises(TypeError):
+            max_integer([1, 2, 3, 4, None])
+
+    def test_none_list(self):
+        """Test for passing None as list"""
+        self.assertIsNone(max_integer([None]), None)
+
+    def test_integers_and_strings(self):
+        """Test for passing a string in the list"""
+        with self.assertRaises(TypeError):
+            max_integer([1, 2, 3, 4, "2"])
+
+    def test_string_numbers(self):
+        """Test for passing a string of numbers in list"""
+        self.assertEqual(max_integer(["1234"]), "1234")
 
     if __name__ == '__main__':
         unittest.main()
