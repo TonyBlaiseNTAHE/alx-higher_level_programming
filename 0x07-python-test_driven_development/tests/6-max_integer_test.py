@@ -64,7 +64,33 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer([-9.1, -2.3, 6.8, 0.1]), 6.8)
         self.assertEqual(max_integer([-9, -2, -6.8, -0.1]), -0.1)
         self.assertEqual(max_integer([-9, -2, -6.8, 0.1]), 0.1)
+    def test_zero(self):
+        """Test for passing a zero in the list"""
+        self.assertEqual(max_integer([0]), 0)
 
+    def test_dictionary(self):
+        """Test for passing a dictionary as a list"""
+        with self.assertRaises(TypeError):
+            max_integer([{'key1': 1}, {'key2': 2}])
+
+    def test_list_in_list(self):
+        """Test for list within a list"""
+        with self.assertRaises(TypeError):
+            max_integer([1, 2, 3, 4, [1, 2, 3, 4]])
+
+    def test_tuple_in_list(self):
+        """Test for tuple within a list"""
+        with self.assertRaises(TypeError):
+            max_integer([1, 2, 3, 4, (1, 2, 3)])
+
+    def test_set_in_list(self):
+        """Test for set within a list"""
+        with self.assertRaises(TypeError):
+            max_integer([1, 2, 3, 4, {1, 2, 3}])
+
+    def test_characters_list(self):
+        """Test for list of characters"""
+        self.assertEqual(max_integer(['a', 'c', 'd', 'v']), 'v')
 
     if __name__ == '__main__':
         unittest.main()
