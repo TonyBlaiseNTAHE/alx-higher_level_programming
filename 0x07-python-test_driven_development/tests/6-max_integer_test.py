@@ -23,15 +23,47 @@ class TestMaxInteger(unittest.TestCase):
         self.assertRaises(TypeError, max_integer, 0, '+', 45, 6, 7 ,8)
         self.assertRaises(TypeError, max_integer, 1, 2, 'i')
         self.assertRaises(TypeError, max_integer, 0, '+', 7 ,8)
+    
     def test_syntax(self):
         with self.assertRaises(SyntaxError):
             eval("max_integer([1,,0])")
             eval("max_integer([hello, 07])")
+    
     def test_name(self):
         with self.assertRaises(NameError):
             eval("max_integer([hello])")
             eval("max_integer([hello, hi])")
             eval("max_integer([a, z])")
+    
+    def test_numbers_character(self):
+        """Test for a list of numbers and character/s"""
+        with self.assertRaises(TypeError):
+            max_integer([1, 2, 3, 's'])
+        with self.assertRaises(TypeError):
+            max_integer([-1, -2, -3, 's'])
+        with self.assertRaises(TypeError):
+            max_integer([1.1, 2.2, 3.3, 's'])
+        with self.assertRaises(TypeError):
+            max_integer([-1.1, 2.2, -3.3, 's'])
+
+    def test_mixed_characters(self):
+        """Test for a mixture of characters in list including +ve and -ve"""
+        self.assertEqual(max_integer(['-a', '-d', '-k', '-w']), '-w')
+        self.assertEqual(max_integer(['-a', '-d', 'k', '-w']), 'k')
+        self.assertEqual(max_integer(['-a', 'z', 'k', '-w']), 'z')
+
+    def test_mixed_list(self):
+        """Test for a list containing various types"""
+        with self.assertRaises(TypeError):
+            max_integer([1, "87", 3, "hot", -3, [78], {87}, '-z', 'a'])
+
+    def test_float_numbers(self):
+        """Test for float numbers in a list including +ve and -ve"""
+        self.assertEqual(max_integer([9.1, 2.3, 6.8, 0.1]), 9.1)
+        self.assertEqual(max_integer([9, 2, 6.8, 0.1]), 9)
+        self.assertEqual(max_integer([-9.1, -2.3, 6.8, 0.1]), 6.8)
+        self.assertEqual(max_integer([-9, -2, -6.8, -0.1]), -0.1)
+        self.assertEqual(max_integer([-9, -2, -6.8, 0.1]), 0.1)
 
 
     if __name__ == '__main__':
