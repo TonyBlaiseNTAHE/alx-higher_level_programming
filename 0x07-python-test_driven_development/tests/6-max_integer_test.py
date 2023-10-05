@@ -32,3 +32,7 @@ class TestMaxInteger(unittest.TestCase):
             eval("max_integer([hello])")
             eval("max_integer([hello, hi])")
             eval("max_integer([a, z])")
+
+
+    if __name__ == '__main__':
+        unittest.main()
