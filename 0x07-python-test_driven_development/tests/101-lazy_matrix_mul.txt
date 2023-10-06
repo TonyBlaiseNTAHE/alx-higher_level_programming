@@ -1,80 +1,97 @@
 >>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
->>> print(lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]]))
-[[ 7 10]
- [15 22]]
->>> print(lazy_matrix_mul([[1, 2]], [[3, 4], [5, 6]]))
-[[13 16]]
->>> print(lazy_matrix_mul([[-1, -2], [-3, -4]], [[-1, -2], [-3, -4]]))
-[[ 7 10]
- [15 22]]
->>> print(lazy_matrix_mul([[-1, -2], [-3, 4]], [[1, -2], [-3, 4]]))
-[[  5  -6]
- [-15  22]]
->>> print(lazy_matrix_mul([[1.2, 2.3], [3.4, 4.3]], [[1.4, 2.4], [3.4, 4.4]]))
-[[ 9.5  13.  ]
- [19.38 27.08]]
->>> print(lazy_matrix_mul([[0.2, 0.3], [0.4, 0.3]], [[0.4, 0.4], [0.4, 0.4]]))
-[[0.2  0.2 ]
- [0.28 0.28]]
->>> print(lazy_matrix_mul([[-0.2, -0.3], [-0.4, -0.3]], [[-0.4, -0.4], [-0.4, -0.4]]))
-[[0.2  0.2 ]
- [0.28 0.28]]
->>> print(lazy_matrix_mul([[-2.2, -2.3], [-2.4, -2.3]], [[-2.4, -2.4], [-2.4, -2.4]]))
-[[10.8  10.8 ]
- [11.28 11.28]]
->>> print(lazy_matrix_mul([[-2.2, 't'], ['hello', -2.3]], [[-2.4, -2.4], [-2.4, -2.4]]))
+>>> 
+>>> 
+>>> lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
+array([[ 7, 10],
+       [15, 22]])
+>>> lazy_matrix_mul([[1, 2]], [[3, 4], [5, 6]])
+array([[13, 16]])
+>>> lazy_matrix_mul([[1, 2], [3, 4]], [[5, 6], [7, 8]])
+array([[19, 22],
+       [43, 50]])
+>>> lazy_matrix_mul([[1, -2], [3, 4]], [[5, 6], [-7, 8]])
+array([[ 19, -10],
+       [-13,  50]])
+>>> lazy_matrix_mul([1, 2], [[5, 6], [7, 8]])            
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
-  File "/home/tonyntahe/alx-higher_level_programming/0x07-python-test_driven_development/101-lazy_matrix_mul.py", line 13, in lazy_matrix_mul
-    new_matrix = np.dot(m_a, m_b)
+  File "/home/bene/Desktop/alx-higher_level_programming/0x07-python-test_driven_development/101-lazy_matrix_mul.py", line 21, in lazy_matrix_mul
+    if matrix_a.shape[1] != matrix_b.shape[0]:
+       ~~~~~~~~~~~~~~^^^
+IndexError: tuple index out of range
+>>> lazy_matrix_mul([[1, 2]], [7, 8])        
+array([23])
+>>> lazy_matrix_mul([[1, 2], [3, 4]], [5, 6])
+array([17, 39])
+>>> lazy_matrix_mul([], [[], []])            
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/bene/Desktop/alx-higher_level_programming/0x07-python-test_driven_development/101-lazy_matrix_mul.py", line 21, in lazy_matrix_mul
+    if matrix_a.shape[1] != matrix_b.shape[0]:
+       ~~~~~~~~~~~~~~^^^
+IndexError: tuple index out of range
+>>> lazy_matrix_mul([[], []], [])
+array([0., 0.])
+>>> lazy_matrix_mul([[], []], [[]])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/bene/Desktop/alx-higher_level_programming/0x07-python-test_driven_development/101-lazy_matrix_mul.py", line 22, in lazy_matrix_mul
+    raise ValueError("m_a and m_b can't be multiplied")
+ValueError: m_a and m_b can't be multiplied
+>>> lazy_matrix_mul([[]], [[], []])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/bene/Desktop/alx-higher_level_programming/0x07-python-test_driven_development/101-lazy_matrix_mul.py", line 22, in lazy_matrix_mul
+    raise ValueError("m_a and m_b can't be multiplied")
+ValueError: m_a and m_b can't be multiplied
+>>> lazy_matrix_mul([[1, 2], [3, '4']], [[5, 6], [7, 8]])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/bene/Desktop/alx-higher_level_programming/0x07-python-test_driven_development/101-lazy_matrix_mul.py", line 24, in lazy_matrix_mul
+    result = np.dot(m_a, m_b)
+             ^^^^^^^^^^^^^^^^
 ValueError: data type must provide an itemsize
->>> print(lazy_matrix_mul([['him', 't'], ['hello', 'tony']], [['hi', 'joe'], ['happpy', 'her']]))
+>>> lazy_matrix_mul([[1, 2], [3, 4]], [[5, '6'], [7, 8]])
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
-  File "/home/tonyntahe/alx-higher_level_programming/0x07-python-test_driven_development/101-lazy_matrix_mul.py", line 13, in lazy_matrix_mul
-    new_matrix = np.dot(m_a, m_b)
+  File "/home/bene/Desktop/alx-higher_level_programming/0x07-python-test_driven_development/101-lazy_matrix_mul.py", line 24, in lazy_matrix_mul
+    result = np.dot(m_a, m_b)
+             ^^^^^^^^^^^^^^^^
 ValueError: data type must provide an itemsize
->>> print(lazy_matrix_mul([['him', 't'], ['hello', 'tony']], [['hi', 'joe'], ['happpy', 'her']]))
+>>> lazy_matrix_mul([[1, 2, 3], [4, 5]], [[5, 6], [7, 8]])
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
-  File "/home/tonyntahe/alx-higher_level_programming/0x07-python-test_driven_development/101-lazy_matrix_mul.py", line 13, in lazy_matrix_mul
-    new_matrix = np.dot(m_a, m_b)
-ValueError: data type must provide an itemsize
->>> print(lazy_matrix_mul([['12', '23'], ['34', '45']], [['54', '56'], ['65', '76']]))
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "/home/tonyntahe/alx-higher_level_programming/0x07-python-test_driven_development/101-lazy_matrix_mul.py", line 13, in lazy_matrix_mul
-    new_matrix = np.dot(m_a, m_b)
-ValueError: data type must provide an itemsize
->>> print(lazy_matrix_mul([[-'12', -'23'], [-'34', -'45']], [[-'54', -'56'], [-'65', -'76']]))
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-TypeError: bad operand type for unary -: 'str'
->>> print(lazy_matrix_mul([[1, 23], [34, 45]], [[5,], [65,]]))
-[[1500]
- [3095]]
->>> print(lazy_matrix_mul([[], [34, 45]], [[5,], [65,]]))
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "/home/tonyntahe/alx-higher_level_programming/0x07-python-test_driven_development/101-lazy_matrix_mul.py", line 13, in lazy_matrix_mul
-    new_matrix = np.dot(m_a, m_b)
+  File "/home/bene/Desktop/alx-higher_level_programming/0x07-python-test_driven_development/101-lazy_matrix_mul.py", line 18, in lazy_matrix_mul
+    matrix_a = np.array(m_a)
+               ^^^^^^^^^^^^^
 ValueError: setting an array element with a sequence. The requested array has an inhomogeneous shape after 1 dimensions. The detected shape was (2,) + inhomogeneous part.
->>> print(lazy_matrix_mul([], [], []))
+>>> lazy_matrix_mul([[1, 2, 3], [4, 5, 9]], [[5, 6], [7]])
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
-TypeError: lazy_matrix_mul() takes 2 positional arguments but 3 were given
->>> print(lazy_matrix_mul([]))
+  File "/home/bene/Desktop/alx-higher_level_programming/0x07-python-test_driven_development/101-lazy_matrix_mul.py", line 19, in lazy_matrix_mul
+    matrix_b = np.array(m_b)
+               ^^^^^^^^^^^^^
+ValueError: setting an array element with a sequence. The requested array has an inhomogeneous shape after 1 dimensions. The detected shape was (2,) + inhomogeneous part.
+>>> lazy_matrix_mul([[1, 2]], [[3], [4]])                 
+array([[11]])
+>>> lazy_matrix_mul([[1, 2]], [[3, 6, 8], [4, 9, 1], [-5, 3, -5]])
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
-TypeError: lazy_matrix_mul() missing 1 required positional argument: 'm_b'
->>> print(lazy_matrix_mul())
+  File "/home/bene/Desktop/alx-higher_level_programming/0x07-python-test_driven_development/101-lazy_matrix_mul.py", line 22, in lazy_matrix_mul
+    raise ValueError("m_a and m_b can't be multiplied")
+ValueError: m_a and m_b can't be multiplied
+>>> lazy_matrix_mul(1, 5)                                         
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
-TypeError: lazy_matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
->>> print(lazy_matrix_mul(2))
+  File "/home/bene/Desktop/alx-higher_level_programming/0x07-python-test_driven_development/101-lazy_matrix_mul.py", line 21, in lazy_matrix_mul
+    if matrix_a.shape[1] != matrix_b.shape[0]:
+       ~~~~~~~~~~~~~~^^^
+IndexError: tuple index out of range
+>>> lazy_matrix_mul([[1]], 5)
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
-TypeError: lazy_matrix_mul() missing 1 required positional argument: 'm_b'
->>> print(lazy_matrix_mul(2,4))
-8
+  File "/home/bene/Desktop/alx-higher_level_programming/0x07-python-test_driven_development/101-lazy_matrix_mul.py", line 21, in lazy_matrix_mul
+    if matrix_a.shape[1] != matrix_b.shape[0]:
+                            ~~~~~~~~~~~~~~^^^
+IndexError: tuple index out of range
 
