@@ -1,0 +1,130 @@
+>>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+
+>>> print(matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]]))
+[[7, 10], [15, 22]]
+>>> print(matrix_mul([[1, 6], [32, 46]], [[41, 27], [63, 94]]))
+[[419, 591], [4210, 5188]]
+>>> print(matrix_mul([[1, 6], [3, 4]], [[4, 7], [6, 4]]))
+[[40, 31], [36, 37]]
+>>> print(matrix_mul([[100, 6], [3, 4]], [[4, 70], [6, 46]]))
+[[436, 7276], [36, 394]]
+>>> print(matrix_mul([[100, 6], [3, 4]], [[49, 70], [69, 46]]))
+[[5314, 7276], [423, 394]]
+>>> print(matrix_mul([[100, 67], [30, 4]], [[4, 70], [69, 4]]))
+[[5023, 7268], [396, 2116]]
+>>> print(matrix_mul([[100, 67], [30, 4]], [[4, 70], [69, 49]]))
+[[5023, 10283], [396, 2296]]
+>>> print(matrix_mul([[100, 67], [30, 4]], [[67, 7], [69, 4]]))
+[[11323, 968], [2286, 226]]
+>>> print(matrix_mul([[30, 0], [30, 4]], [[6, 7], [6, 4]]))
+[[180, 210], [204, 226]]
+>>> print(matrix_mul([[0, 1], [1, 0]], [[0, 1], [1, 0]]))
+[[1, 0], [0, 1]]
+>>> print(matrix_mul([[4, 5], [6, 7]], [[8, 9], [10, 11]]))
+[[82, 91], [118, 131]]
+>>> print(matrix_mul([[23, 54], [66, 87]], [[8, 9], [10, 11]]))
+[[724, 801], [1398, 1551]]
+>>> print(matrix_mul([[0.2, 4.4], [6.5, 8,7]], [[8.9, 9.3], [10.4, 1.1]]))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/tonyntahe/alx-higher_level_programming/0x07-python-test_driven_development/100-matrix_mul.py", line 39, in matrix_mul
+    raise TypeError("each row of m_a must be of the same size")
+TypeError: each row of m_a must be of the same size
+>>> print(matrix_mul([[0.2, 4.4], [6.5, 8.7]], [[8.9, 9.3], [10.4, 1.1]]))
+[[47.540000000000006, 6.700000000000001], [148.32999999999998, 70.02000000000001]]
+>>> print(matrix_mul([[2.8, 7.4], [8.5, 4.7]], [[2.9, 4.3], [0.4, 1.41]]))
+[[11.08, 22.473999999999997], [26.529999999999998, 43.177]]
+>>> print(matrix_mul([[2.68, 7.64], [8.56, 4.76]], [[62.9, 6.3], [6.4, 1.61]]))
+[[217.46800000000002, 29.1844], [568.8879999999999, 61.59160000000001]]
+>>> print(matrix_mul([[2.6586, 7.654], [8.556, 4.765]], [[625.9, 6.3], [6.4, 1.65]]))
+[[1713.0033399999998, 29.378279999999997], [5385.6964, 61.76504999999999]]
+>>> print(matrix_mul([[2.6, 56.4], [56.566, 56.55]], [[56.65, 6.56], [6.65, 1.56]]))
+[[522.35, 105.03999999999999], [3580.5214, 459.29096]]
+>>> print(matrix_mul([[2.0, 5.4], [5.6, 6.5]], [[6.5, 6.6], [6.5, 1.5]]))
+[[48.1, 21.3], [78.65, 46.709999999999994]]
+>>> print(matrix_mul([[2.60, 5.64], [5.66, 66.5]], [[65, 66.6], [6.6, 1.6]]))
+[[206.224, 182.184], [806.8, 483.356]]
+>>> print(matrix_mul([[-2.60, -5.64], [-5.66, -66.5]], [[-65, -66.6], [-6.6, -1.6]]))
+[[206.224, 182.184], [806.8, 483.356]]
+>>> print(matrix_mul([[-2.60, -5.64], [5.66, -66.5]], [[-65, 66.6], [-6.6, 1.6]]))
+[[206.224, -182.184], [70.99999999999994, 270.5559999999999]]
+>>> print(matrix_mul([[-2.60, -5.6], [5.66, -6.5]], [[-5, 6.6], [-6, 1.6]]))
+[[46.599999999999994, -26.119999999999997], [10.7, 26.956000000000003]]
+>>> print(matrix_mul([[-4, -5], [-6, -7]], [[-8, -9], [-10, -11]]))
+[[82, 91], [118, 131]]
+>>> print(matrix_mul([[-4, -5], [-6, 7]], [[-8, 9], [10, -1]]))
+[[-18, -31], [118, -61]]
+>>> print(matrix_mul([[-4, -5], [-6, 7]], [[-8, -90], [1, -1]]))
+[[27, 365], [55, 533]]
+>>> print(matrix_mul([[-4, -5], [-6, -7]], [[-8, -90], [1, -1]]))
+[[27, 365], [41, 547]]
+>>> print(matrix_mul([[-4, -5], [-60, -7]], [[-8, -90], [1, -1]]))
+[[27, 365], [473, 5407]]
+>>> print(matrix_mul([[-100, -55], [-660, -76]], [[-68, -960], [166, -166]]))
+[[-2330, 105130], [32264, 646216]]
+>>> print(matrix_mul([[-10, -5], [-60, -7]], [[-68, -0], [0, -166]]))
+[[680, 830], [4080, 1162]]
+>>> print(matrix_mul([[-10, -5], [-60, -7]], [[-68, -0], [0, -166]]))
+[[680, 830], [4080, 1162]]
+>>> print(matrix_mul([[-10, -5], [-60, 7]], [[-68, -0], [-0, -6]]))
+[[680, 30], [4080, -42]]
+>>> print(matrix_mul([[0, -1], [-1, 0]], [[0, -1], [-1, 0]]))
+[[1, 0], [0, 1]]
+>>> print(matrix_mul([[1200000, -15555], [-144, 3444]], [[34, -1333], [-10000, 230000]]))
+[[196350000, -5177250000], [-34444896, 792311952]]
+>>> print(matrix_mul([[1200000, -155455], [-144, 3444]], [[344, -1333], [-10000, 230000]]))
+[[1967350000, -37354250000], [-34489536, 792311952]]
+>>> print(matrix_mul([[1200000, -155455], [-144, 3444]], [[344, -1333], [-100, 230000]]))
+[[428345500, -37354250000], [-393936, 792311952]]
+>>> print(matrix_mul([[12400000, -1554455], [-144, 34444]], [[344, -1333], [-100, 230000]]))
+[[4421045500, -374053850000], [-3493936, 7922311952]]
+>>> print(matrix_mul([[12400000, -1554455], [-144, 34444]], [[344, -1333], [-100, 23040]]))
+[[4421045500, -52343843200], [-3493936, 793781712]]
+>>> print(matrix_mul([[0, -1], []], [[0, -1], []]))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/tonyntahe/alx-higher_level_programming/0x07-python-test_driven_development/100-matrix_mul.py", line 39, in matrix_mul
+    raise TypeError("each row of m_a must be of the same size")
+TypeError: each row of m_a must be of the same size
+>>> print(matrix_mul([[], []], [[], []]))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/tonyntahe/alx-higher_level_programming/0x07-python-test_driven_development/100-matrix_mul.py", line 45, in matrix_mul
+    raise ValueError("m_a and m_b can't be multiplied")
+ValueError: m_a and m_b can't be multiplied
+>>> print(matrix_mul([[2], [2]], [[2], [2]]))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/tonyntahe/alx-higher_level_programming/0x07-python-test_driven_development/100-matrix_mul.py", line 45, in matrix_mul
+    raise ValueError("m_a and m_b can't be multiplied")
+ValueError: m_a and m_b can't be multiplied
+>>> print(matrix_mul([[2,], [2,]], [[2,], [2,]]))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/tonyntahe/alx-higher_level_programming/0x07-python-test_driven_development/100-matrix_mul.py", line 45, in matrix_mul
+    raise ValueError("m_a and m_b can't be multiplied")
+ValueError: m_a and m_b can't be multiplied
+>>> print(matrix_mul([[2,4]], [[2,], [2,]]))
+[[12]]
+>>> print(matrix_mul([[2,4]], [[2,0], [2,]]))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/tonyntahe/alx-higher_level_programming/0x07-python-test_driven_development/100-matrix_mul.py", line 43, in matrix_mul
+    raise TypeError("each row of m_b must be of the same size")
+TypeError: each row of m_b must be of the same size
+>>> print(matrix_mul([[2,4]], [[2,0], [2,0]]))
+[[12, 0]]
+>>> print(matrix_mul([[2,4]], [[2,0], [2,'+']]))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/tonyntahe/alx-higher_level_programming/0x07-python-test_driven_development/100-matrix_mul.py", line 35, in matrix_mul
+    raise TypeError("m_b should contain only integers or floats")
+TypeError: m_b should contain only integers or floats
+>>> print(matrix_mul([[hello]], [[world], [2]]))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'hello' is not defined
+>>> print(matrix_mul([[{2: 'h', 2: 'jio'}], [{1:'hello'}], [{1: 'hi', 2: 'tony'}]]))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: matrix_mul() missing 1 required positional argument: 'm_b'
