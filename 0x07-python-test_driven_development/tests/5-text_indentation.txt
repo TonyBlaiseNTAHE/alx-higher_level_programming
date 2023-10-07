@@ -25,21 +25,8 @@ Traceback (most recent call last):
   File "/home/tonyntahe/alx-higher_level_programming/0x07-python-test_driven_development/5-text_indentation.py", line 11, in text_indentation
     raise TypeError("text must be a string")
 TypeError: text must be a string
->>> text_identation("""Hello
-... 
-... 
-... I am tony, and i love programming
-... 
-... bye bye""")
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-NameError: name 'text_identation' is not defined
->>> text_identation("""Hello
-... 
-... 
-...                    I am tony, and i love programming
-... 
-...                    bye bye""")
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-NameError: name 'text_identation' is not defined
+>>> text_indentation("    Woah now.    This is messy.   ")
+Woah now.
+<BLANKLINE>
+This is messy.
+<BLANKLINE>
