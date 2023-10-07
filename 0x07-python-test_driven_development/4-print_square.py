@@ -6,7 +6,7 @@ args: size  - the size of the square
 
 
 def print_square(size):
-    """if statement"""
+    """prints a square with "#"'s that has a length of size"""
     if type(size) is not int:
         raise TypeError("size must be an integer")
     elif size < 0:
