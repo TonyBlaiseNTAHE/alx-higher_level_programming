@@ -1,9 +1,9 @@
 #!/usr/bin/python
-"""
-BaseGeometry class
+"""BaseGeometry class
 """
 
 
 class BaseGeometry:
-    """Empty class"""
+    """Class that defines a shape
+    """
     pass
