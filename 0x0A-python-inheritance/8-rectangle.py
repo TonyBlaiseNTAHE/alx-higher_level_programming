@@ -4,10 +4,13 @@ BaseGeometry class
 
 """
 
+
 class BaseGeometry:
     """area method"""
+
     def area(self):
         raise Exception("area() is not implemented")
+
     def integer_validator(self, name, value):
         """validator method
 
@@ -20,12 +23,16 @@ class BaseGeometry:
             raise TypeError(f"{name} must be an integer")
         if value <= 0:
             raise ValueError(f"{name} must be greater than 0")
+
+
 """
 Rectangle class inherit from BaseGeometry
 """
 
+
 class Rectangle(BaseGeometry):
     """constructor"""
+
     def __init__(self, width, height):
         super().__init__()
         self.__width = width
