@@ -1,11 +1,12 @@
 #!/usr/bin/python3
-"""
-class MyInt inherit from built-in int class
+"""Module inherits from int
 """
 
 
 class MyInt(int):
-    """initialising the super class"""
+    """Inherits from int but inverting == and !=
+    """
+
     def __init__(self, num):
         """Initializes MyInt
         Args:
