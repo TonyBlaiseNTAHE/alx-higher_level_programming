@@ -1,4 +1,4 @@
-#!/usr/binpython3
+#!/usr/bin/python3
 """Module contains a class that inherits from 'int'
 """
 
