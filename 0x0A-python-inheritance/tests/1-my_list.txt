@@ -77,3 +77,62 @@ Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
   File "<stdin>", line 10, in print_sorted
 TypeError: '<' not supported between instances of 'dict' and 'dict'
+>>> my_list = MyList()                     
+>>> my_list.append(24)                     
+>>> print(my_list)
+[24]
+>>> print(my_list.print_sorted())
+[24]
+None
+>>> my_list.print_sorted()       
+[24]
+>>> MyList = __import__('1-my_list').MyList
+>>> my_list = MyList()                     
+>>> if isinstance(my_list, MyList):
+...     True
+... else:
+...     False
+... 
+True
+>>> if type(my_list) == MyList:
+...     True
+... else:
+...     False
+... 
+True
+>>> MyList = __import__('1-my_list').MyList
+>>> my_list = MyList()                     
+>>> if isinstance(my_list, MyList):
+...     True
+... else:
+...     False
+... 
+True
+>>> MyList = __import__('1-my_list').MyList
+>>> my_list = MyList()                     
+>>> if issubclass(MyList, list):
+...     True
+... else:
+...     False
+... 
+True
+>>> MyList = __import__('1-my_list').MyList
+>>> my_list = MyList()                     
+>>> if hasattr(MyList, '__str__'):
+...     True
+... else:
+...     False
+... 
+True
+>>> if hasattr(MyList, 'append'): 
+...     True
+... else:
+...     False
+... 
+True
+>>> if hasattr(MyList, 'print_sorted'):
+...     True
+... else:
+...     False
+... 
+True
