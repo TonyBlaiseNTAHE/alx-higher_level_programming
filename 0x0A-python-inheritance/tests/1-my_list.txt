@@ -86,3 +86,6 @@ TypeError: '<' not supported between instances of 'dict' and 'dict'
 None
 >>> my_list.print_sorted()       
 [24]
+>>> my_list = MyList()
+>>> issubclass(MyList, list)
+True
