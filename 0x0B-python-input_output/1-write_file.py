@@ -11,7 +11,7 @@ def write_file(filename="", text=""):
         args: filename - the file's name
              text - the text to right into
              the file
-        returns: the length of the text written to the file       
+        returns: the length of the text written to the file
     """
     try:
         with open(filename, "w", encoding="utf-8") as file:
