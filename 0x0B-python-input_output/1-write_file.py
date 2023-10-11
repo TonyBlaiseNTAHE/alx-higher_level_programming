@@ -15,8 +15,7 @@ def write_file(filename="", text=""):
     """
     try:
         with open(filename, "w", encoding="utf-8") as file:
-            file.write(text)
-            length = len(text)
+            length = file.write(text)
         return length
     except Exception as err:
         print("Error:", err)
