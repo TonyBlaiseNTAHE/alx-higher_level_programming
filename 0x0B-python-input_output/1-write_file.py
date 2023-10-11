@@ -13,10 +13,6 @@ def write_file(filename="", text=""):
              the file
         returns: the length of the text written to the file
     """
-    try:
-        with open(filename, "w", encoding="utf-8") as file:
-            length = file.write(text)
+    with open(filename, "w", encoding="utf-8") as file:
+        length = file.write(text)
         return length
-    except Exception as err:
-        print("Error:", err)
-        return 0
