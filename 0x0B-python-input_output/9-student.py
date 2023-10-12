@@ -1,10 +1,5 @@
 #!/usr/bin/python3
-"""importing json
-"""
-import json
-
-"""module containing a class called Student
-and a method called to_json
+"""defining a class
 """
 
 
