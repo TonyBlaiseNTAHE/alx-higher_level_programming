@@ -1,5 +1,10 @@
 #!/usr/bin/python3
-"""defining a class
+"""importing json
+"""
+import json
+
+"""module containing a class called Student
+and a method called to_json
 """
 
 
@@ -15,7 +20,6 @@ class Student:
         """
         Retrieves a dictionary representation of a Student instance.
         Returns:
-            dict: A dictionary containing the attributes
-            of the Student instance.
+            dict: A dictionary containing the attributes of the Student instance.
         """
         return self.__dict__
