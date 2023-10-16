@@ -1,0 +1,80 @@
+#!/usr/bin/python3
+"""importing JSON and OS
+"""
+import json
+import os
+
+"""representing a class called
+Base
+"""
+
+
+class Base:
+    """private class attribute"""
+    __nb_object = 0
+    """class constructor"""
+    def __init__(self, id=None):
+        """if statement"""
+        if id is not None:
+            self.id = id
+        else:
+            Base.__nb_object += 1
+            self.id = Base.__nb_object
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        """ returns the JSON string
+            representation of list_dictionaries
+        """
+        if list_dictionaries is None or list_dictionaries == []:
+            return []
+        else:
+            return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """writes the JSON string representation
+           of list_objs to a file"""
+        filename = cls.__name__ + ".json"
+        if list_objs is None or list_objs == []:
+            return []
+        else:
+            ls = cls.to_json_string([obj.to_dictionary() for obj in list_objs])
+            with open(filename, "w") as file:
+                file.write(ls)
+            return ls
+
+    def from_json_string(json_string):
+        """returns the list of the JSON string
+        representation"""
+        if json_string is None or json_string == []:
+            return []
+        else:
+            return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """returns an instance with all attributes already set
+        """
+        if cls.__name__ == "Rectangle":
+            dummy = cls(1,1)
+        else:
+            dummy = cls(1)
+        dummy.update(**dictionary)
+        return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """returns a list of instances
+        """
+        filename = cls.__name__ + ".json"
+        if not os.path.exists(filename):
+            return []
+        else:
+            lst = []
+            with open(filename, 'r') as file:
+                l = file.read()
+                lst_dict = cls.from_json_string(l)
+                for ist in lst_dict:
+                    lst.append(cls.create(**ist))
+            return lst
