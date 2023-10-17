@@ -57,7 +57,7 @@ class Base:
         """returns an instance with all attributes already set
         """
         if cls.__name__ == "Rectangle":
-            dummy = cls(1,1)
+            dummy = cls(1, 1)
         else:
             dummy = cls(1)
         dummy.update(**dictionary)
@@ -73,8 +73,8 @@ class Base:
         else:
             lst = []
             with open(filename, 'r') as file:
-                l = file.read()
-                lst_dict = cls.from_json_string(l)
+                s = file.read()
+                lst_dict = cls.from_json_string(s)
                 for ist in lst_dict:
                     lst.append(cls.create(**ist))
             return lst
