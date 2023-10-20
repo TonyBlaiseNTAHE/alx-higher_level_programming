@@ -1,32 +1,7 @@
-#!/usr/bin/python3
-"""importing JSON and OS
-"""
-import json
-import os
-
-"""representing a class called
-Base
-"""
-
-
-class Base:
-    """private class attribute"""
-
-    __nb_object = 0
-    """class constructor"""
-
-    def __init__(self, id=None):
-        """if statement"""
-        if id is not None:
-            self.id = id
-        else:
-            Base.__nb_object += 1
-            self.id = Base.__nb_object
-
     @staticmethod
     def to_json_string(list_dictionaries):
-        """returns the JSON string
-        representation of list_dictionaries
+        """ returns the JSON string
+            representation of list_dictionaries
         """
         if list_dictionaries is None or list_dictionaries == []:
             return []
@@ -36,7 +11,7 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         """writes the JSON string representation
-        of list_objs to a file"""
+           of list_objs to a file"""
         filename = cls.__name__ + ".json"
         if list_objs is None or list_objs == []:
             return []
@@ -56,7 +31,8 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """returns an instance with all attributes already set"""
+        """returns an instance with all attributes already set
+        """
         if cls.__name__ == "Rectangle":
             dummy = cls(1, 1)
         else:
@@ -66,13 +42,14 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        """returns a list of instances"""
+        """returns a list of instances
+        """
         filename = cls.__name__ + ".json"
         if not os.path.exists(filename):
             return []
         else:
             lst = []
-            with open(filename, "r") as file:
+            with open(filename, 'r') as file:
                 s = file.read()
                 lst_dict = cls.from_json_string(s)
                 for ist in lst_dict:

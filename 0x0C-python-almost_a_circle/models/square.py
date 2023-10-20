@@ -9,10 +9,11 @@ from models.rectangle import Rectangle
 
 class Square(Rectangle):
     """Square contructor(__init__)
-       agrs: size - the size of a square
-            x - a variable
-            y - a variable
+    agrs: size - the size of a square
+         x - a variable
+         y - a variable
     """
+
     def __init__(self, size, x=0, y=0):
         super().__init__(width=size, height=size, x=x, y=y)
         self.__height = size
@@ -34,7 +35,7 @@ class Square(Rectangle):
 
     def update(self, *args, **kwargs):
         """updating methos"""
-        if args:
+        if args and len(args) != 0:
             if len(args) >= 1:
                 self.id = args[0]
             if len(args) >= 2:
@@ -44,23 +45,17 @@ class Square(Rectangle):
             if len(args) >= 4:
                 self.__y = args[3]
         else:
-            if kwargs:
+            if kwargs and len(kwargs) != 0:
                 for key, value in kwargs.items():
-                    if key == 'id':
+                    if key == "id":
                         self.id = value
-                    elif key == 'size':
+                    elif key == "size":
                         self.size = value
-                    elif key == 'x':
+                    elif key == "x":
                         self.__x = value
-                    elif key == 'y':
+                    elif key == "y":
                         self.__y = value
 
     def to_dictionary(self):
-        """returns the dictionary representation of a Square
-        """
-        return {
-            'id': self.id,
-            'size': self.size,
-            'x': self.__x,
-            'y': self.__y
-        }
+        """returns the dictionary representation of a Square"""
+        return {"id": self.id, "size": self.size, "x": self.__x, "y": self.__y}
