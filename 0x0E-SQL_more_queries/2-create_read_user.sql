@@ -1,7 +1,7 @@
--- create the database hbtn_0d_2 and the user user_0d_2
+-- creates the database hbtn_0d_2 and the user user_0d_2
 -- creates database hbtn_0d_2
 CREATE DATABASE IF NOT EXISTS hbtn_0d_2;
 -- create user user_0d_2 with password user_0d_2_pwd
 CREATE USER IF NOT EXISTS user_0d_2@localhost IDENTIFIED BY 'user_0d_2_pwd';
--- grants Select privilege in the database htbn_0d_2
-GRANT SELECT ON htbn_0d_2.* TO user_0d_2@localhost;
+-- grants SELECT privilege in the database hbtn_0d_2
+GRANT SELECT ON hbtn_0d_2.* TO user_0d_2@localhost;
