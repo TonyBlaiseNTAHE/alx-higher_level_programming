@@ -1,4 +1,4 @@
-![Python Logo]()
+![Python Logo](https://github.com/TonyBlaiseNTAHE/alx-higher_level_programming/blob/master/kisspng-python-programming-language-computer-programming-language-5acfdc365292a6.6915108915235717663382.png)
 # High Level Programming with Python and JavaScript
 
 ## Topics covered:
