@@ -1,19 +1,15 @@
 #!/usr/bin/node
 
-const n = process.argv[2];
+const size = parseInt(process.argv[2]);
 
-if (n === undefined) {
-  console.log('Missing size');
-} else if (n >= 'a' && n <= 'z') {
+if (isNaN(size)) {
   console.log('Missing size');
 } else {
-  for (let i = 0; i < n; i++) {
-    for (let j = 0; j < n; j++) {
-      process.stdout.write('X');
+  for (let i = 0; i < size; i++) {
+    let row = '';
+    for (let j = 0; j < size; j++) {
+      row += 'X';
     }
-    if (i < n - 1) {
-      console.log();
-    }
+    console.log(row);
   }
-  console.log();
 }
