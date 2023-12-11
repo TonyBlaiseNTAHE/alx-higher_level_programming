@@ -3,10 +3,10 @@
 const i = parseInt(process.argv[2]);
 
 function fact (n) {
-  if (n === 0) {
+  if (isNaN(n)) {
     return 1;
-  } else if (n === 1) {
-    return NaN;
+  } else if (n === 0) {
+    return 1;
   } else {
     return n * fact(n - 1);
   }
