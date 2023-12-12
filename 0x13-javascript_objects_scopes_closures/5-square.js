@@ -2,7 +2,6 @@
 class square extends require('./4-rectangle.js') {
   constructor (size) {
     super(size, size);
-    this.size = size;
   }
 }
 module.exports = square;
