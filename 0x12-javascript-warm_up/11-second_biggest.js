@@ -22,6 +22,9 @@ if (args.length <= 2) {
       secondLargest = num;
     }
   }
-
-  console.log(secondLargest);
+  if (numbers.length === 1) {
+    console.log(0);
+  } else {
+    console.log(secondLargest);
+  }
 }
