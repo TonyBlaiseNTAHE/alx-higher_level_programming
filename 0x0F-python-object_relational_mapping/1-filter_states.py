@@ -14,7 +14,7 @@ if __name__ == '__main__':
 			password=sys.argv[2],
 			db=sys.argv[3])
 	c = conn.cursor()
-	c.execute("SELECT * FROM states WHERE name REGEXP '^N' ORDER BY states.id ASC")
+	c.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC")
 	rows = c.fetchall()
 	for eachrow in rows:
 		print(eachrow)
