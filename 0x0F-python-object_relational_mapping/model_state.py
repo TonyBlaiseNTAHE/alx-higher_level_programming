@@ -15,4 +15,3 @@ class State(Base):
     id = Column(Integer, unique=True, nullable=True, primary_key=True,
                 autoincrement=True)
     name = Column(String(128), nullable=True)
-    
