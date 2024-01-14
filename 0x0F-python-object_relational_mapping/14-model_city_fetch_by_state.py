@@ -21,6 +21,6 @@ if __name__ == '__main__':
     session = Session(engine)
     for state, city in \
         session.query(State, City)\
-            .join(City, State.id == City.state_id).order_by(City.id).all():
+            .filter(State.id == City.state_id).order_by(City.id).all():
         print('{}: ({}) {}'.format(state.name, city.id, city.name))
     session.close()
