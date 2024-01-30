@@ -8,6 +8,6 @@ if __name__ == "__main__":
     from requests import get
 
     content = get('https://alx-intranet.hbtn.io/status')
-    print('Body response:')
-    print("\t- type: {}".format(content.text.__class__))
-    print("\t- content: {}".format(content.text))
+    for head, value in content.headers.items():
+        if head == 'X-Request-Id':
+            print(f'{value}')
