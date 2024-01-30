@@ -13,7 +13,7 @@ if __name__ == '__main__':
 
     data = {'email': email}
     encoded_data = urllib.parse.urlencode(data).encode('ascii')
-    
+
     req = urllib.request.Request(url=sys.argv[1], data=data, method='POST')
     with urllib.request.urlopen(req) as response:
         content = response.read()
