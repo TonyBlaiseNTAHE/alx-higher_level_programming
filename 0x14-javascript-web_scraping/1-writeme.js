@@ -17,8 +17,6 @@ fs.open(fileName, 'w', (err, fd) => {
   fs.write(fd, content, (err) => {
     if (err) {
       console.error('Error writting to the file:', err);
-    } else {
-      console.log('Data written successfully.');
     }
     // close the file
     fs.close(fd, (err) => {
