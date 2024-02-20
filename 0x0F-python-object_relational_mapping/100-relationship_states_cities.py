@@ -4,11 +4,11 @@
 100-relationship_states_cities module
 """
 
-from model_state import State, Base
-from model_city import City
-from sqlalchemy import create_engine
-from sqlalchemy.orm import Session
 import sys
+from sqlalchemy import create_engine, ForeignKey
+from sqlalchemy.orm import Session, relationship
+from relationship_state import Base, State
+from model_city import City
 
 
 if __name__ == '__main__':
