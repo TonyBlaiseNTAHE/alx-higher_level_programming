@@ -2,14 +2,9 @@
 /**
  * script that sends a GET request
  */
-const axios = require('axios');
-
-const url = process.argv[2];
-
-axios.get(url)
-  .then(response => {
-    console.log('code:', response.status);
-  })
-  .catch(error => {
-    console.error('Error:', error);
-  });
+const request = require('request');
+request(process.argv[2], function (error, response) {
+    if (error == null) {
+        console.log('code:' + response.statusCode);
+    }
+});
